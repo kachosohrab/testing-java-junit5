@@ -1,50 +1,50 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import guru.springframework.sfgpetclinic.model.Owner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class OwnerSDJpaServiceTest {
+import static org.junit.jupiter.api.Assertions.*;
 
-    OwnerSDJpaService ownerSDJpaService;
+@Disabled(value = "Disabled until we learn Mocking")
+class OwnerSDJpaServiceTest {
+
+    OwnerSDJpaService service;
 
     @BeforeEach
-    void beforeEach() {
-        ownerSDJpaService = new OwnerSDJpaService(null, null, null);
-    }
-
-    @Test
-    void testDelete() {
-    }
-
-    @Test
-    void testDeleteById() {
-
-    }
-
-    @Test
-    void testFindAll() {
-
-    }
-
-    @Test
-    void testFindAllByLastNameLike() {
-
-    }
-
-    @Test
-    void testFindById() {
+    void setUp() {
+        service = new OwnerSDJpaService(null, null, null);
 
     }
 
     @Disabled
     @Test
-    void testFindByLastName() {
-        ownerSDJpaService.findAllByLastNameLike("Avatar");
+    void findByLastName() {
+        Owner foundOwner = service.findByLastName("Buck");
     }
 
     @Test
-    void testSave() {
+    void findAllByLastNameLike() {
+    }
 
+    @Test
+    void findAll() {
+    }
+
+    @Test
+    void findById() {
+    }
+
+    @Test
+    void save() {
+    }
+
+    @Test
+    void delete() {
+    }
+
+    @Test
+    void deleteById() {
     }
 }

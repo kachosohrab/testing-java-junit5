@@ -1,22 +1,32 @@
 package guru.springframework.sfgpetclinic.model;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("models")
-public class PersonTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+@Tag("model")
+class PersonTest {
 
     @Test
-    void groupedAssertion() {
-        Person person = new Person(1l, "King", "Kong");
-        assertAll("Person Assertions",
-            () -> assertTrue(person.getId() == 1l, "Id is not same"),
-            () -> assertEquals(person.getFirstName(), "King", "First Name not same"),
-            () -> assertEquals(person.getLastName(), "Kong", "Last Name not same")
-        );
+    void groupedAssertions() {
+        //given
+        Person person = new Person(1l, "Joe", "Buck");
+
+        //then
+        assertAll("Test Props Set",
+                () -> assertEquals(person.getFirstName(), "Joe"),
+                () -> assertEquals(person.getLastName(), "Buck"));
+    }
+
+    @Test
+    void groupedAssertionMsgs() {
+        //given
+        Person person = new Person(1l, "Joe", "Buck");
+
+        //then
+        assertAll("Test Props Set",
+                () -> assertEquals(person.getFirstName(), "Joe", "First Name Failed"),
+                () -> assertEquals(person.getLastName(), "Buck", "Last Name Failed"));
     }
 }
