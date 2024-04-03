@@ -8,12 +8,15 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
 import guru.springframework.sfgpetclinic.exceptions.ValueNotFoundException;
 
+
+@Tag("controllers")
 public class IndexControllerTest {
 
     IndexController indexController;
